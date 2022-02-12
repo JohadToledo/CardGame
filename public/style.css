@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Architects Daughter', cursive;
+}
+header{
+    /* width:25vw; */
+    height: 60px;
+    position: fixed;
+    z-index: 100;
+    text-align: center;
+    width: 100%;
+    background-color: rgb(247, 124, 10);
+    font-size: 2rem;
+}
+
+nav{
+}
+section{
+    /* width: 25vw; */
+    background: #444;
+    height: calc(100vh - 60px);
+    padding: 6vh;
+}
+
+.space-25{
+    margin-top:25px;
+    margin-bottom:25px;
+}
+
+.center{
+    text-align: center;
+}
+
+.flexcenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player1{
+    margin-top: 50px;
+}
+
+.section-one{
+    background: url(./img/dog-splash.png) no-repeat center;
+    background-size: cover;
+    position: relative;
+    padding-top: 30px;
+    flex-direction: column;
+
+    justify-content: flex-start;
+
+}
