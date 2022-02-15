@@ -10,14 +10,19 @@ body{
 header{
     /* width:25vw; */
     height: 60px;
-    position: fixed;
+    /* position: fixed; */
     z-index: 100;
     text-align: center;
     width: 100%;
     background-color: rgb(247, 124, 10);
     font-size: 2rem;
 }
-
+.form-label{
+    background-color: rgb(247, 124, 10);
+    color: #fff;
+    padding: 4px 13px;
+    border-radius: 4px;
+}
 nav{
 }
 section{
@@ -70,9 +75,14 @@ section{
     border-radius: 10px;
 }
 
-.active{
+.carousel-indicators .active{
     width: 12px;
     height: 12px;
     margin: 0;
     background-color: #fff;
+}
+
+img{
+    width: 200px;
+    height: 200px;
 }
