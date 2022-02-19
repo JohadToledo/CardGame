@@ -23,6 +23,15 @@ let pic6 = document.getElementById('pic6')
 let text6 = document.getElementById('text6')
 let desc6 = document.getElementById('desc6')
 let previousGames = []
+playerX = document.getElementById('playerX')
+playerZ = document.getElementById('playerZ')
+let showResults = document.getElementById('showResults')
+let startAgain = document.getElementById('startAgain')
+let divResults = document.getElementById('div-results')
+let matchYN = document.getElementById('matchYN')
+let sectionResult = document.getElementById('sectionResult')
+let match = null
+
 
 let randomNumber = (min, max) => {
     random = Math.round(Math.random() * (max - min) + min)
@@ -42,6 +51,7 @@ let play = () => {
         }else{
             console.log(results)
             resultIterate(results)
+            results.push({playerZ: playerZ.value , playerX: playerX.value}, {Match: true})
             previousGames.push(results)
         }
 }
@@ -86,14 +96,23 @@ let showResult =()=>{
         animation.style.display= 'none'
         carousel.style.display= 'flex'
     }, 3000)
-    resetAndPlay()
 }
 
 luck.addEventListener('click', () => {
+    resetAndPlay()
     showResult()
 })
 
 let back =()=>{
-    home.style.display= 'flex'
+    home.style.display= 'none'
     carousel.style.display= 'none'
+    sectionResult.style.display= 'flex'
 }
+
+showResults.addEventListener('click', ()=>{
+    if(match){
+        matchYN.innerHTML = 'Si matchean perro de los naranjos'
+    }else{
+        matchYN.innerHTML = 'No matchean perro de los naranjos'
+    }
+})
