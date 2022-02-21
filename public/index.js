@@ -30,6 +30,7 @@ let startAgain = document.getElementById('startAgain')
 let divResults = document.getElementById('div-results')
 let matchYN = document.getElementById('matchYN')
 let sectionResult = document.getElementById('sectionResult')
+let previousGameList = document.getElementById('previous-game-list')
 let match = null
 
 
@@ -115,4 +116,9 @@ showResults.addEventListener('click', ()=>{
     }else{
         matchYN.innerHTML = 'No matchean perro de los naranjos'
     }
+})
+
+startAgain.addEventListener('click', ()=>{
+    sectionResult.style.display = 'none'
+    home.style.display= 'flex'
 })
