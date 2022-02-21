@@ -89,9 +89,12 @@ section{
 }
 
 .carousel img{
-    width: 200px;
-    height: 50vh;
+    width: 175px;
+    height: 40vh;
+    display: inline !important;
+    border-radius: 9px;
 }
+
 .animation img{
 width: 50%;
 }
@@ -132,7 +135,7 @@ width: 50%;
     color: #FF97BB;
 }
 
-#sectionResult{
+.btnResult{
     display: none;
 }
 

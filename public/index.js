@@ -23,14 +23,16 @@ let pic6 = document.getElementById('pic6')
 let text6 = document.getElementById('text6')
 let desc6 = document.getElementById('desc6')
 let previousGames = []
-playerX = document.getElementById('playerX')
-playerZ = document.getElementById('playerZ')
+let playerX = document.getElementById('playerX')
+let playerZ = document.getElementById('playerZ')
 let showResults = document.getElementById('showResults')
 let startAgain = document.getElementById('startAgain')
 let divResults = document.getElementById('div-results')
 let matchYN = document.getElementById('matchYN')
-let sectionResult = document.getElementById('sectionResult')
+let btnResult = document.getElementById('btnResult')
 let previousGameList = document.getElementById('previous-game-list')
+let cardPlayer = document.getElementById('card-player')
+let sectionResults = document.getElementById('sectionResults')
 let match = null
 
 
@@ -64,12 +66,12 @@ pic3.setAttribute('src', completedGame[2].img)
 pic4.setAttribute('src', completedGame[3].img)
 pic5.setAttribute('src', completedGame[4].img)
 pic6.setAttribute('src', completedGame[5].img)
-text1.innerHTML = completedGame[0].name
-text2.innerHTML = completedGame[1].name
-text3.innerHTML = completedGame[2].name
-text4.innerHTML = completedGame[3].name
-text5.innerHTML = completedGame[4].name
-text6.innerHTML = completedGame[5].name
+text1.innerHTML = `Card 1/3 of ${playerZ.value}`
+text2.innerHTML = `Card 2/3 of ${playerZ.value}`
+text3.innerHTML = `Card 3/3 of ${playerZ.value}`
+text4.innerHTML = `Card 1/3 of ${playerX.value}`
+text5.innerHTML = `Card 2/3 of ${playerX.value}`
+text6.innerHTML = `Card 3/3 of ${playerX.value}`
 desc1.innerHTML = completedGame[0].description
 desc2.innerHTML = completedGame[1].description
 desc3.innerHTML = completedGame[2].description
@@ -107,18 +109,24 @@ luck.addEventListener('click', () => {
 let back =()=>{
     home.style.display= 'none'
     carousel.style.display= 'none'
-    sectionResult.style.display= 'flex'
+    btnResult.style.display= 'flex'
 }
 
+
 showResults.addEventListener('click', ()=>{
-    if(match){
-        matchYN.innerHTML = 'Si matchean perro de los naranjos'
-    }else{
-        matchYN.innerHTML = 'No matchean perro de los naranjos'
-    }
+    console.log('home')
+    btnResult.style.display= 'none'
+    sectionResults.style.display= 'flex'
+
+
+    // if(match){
+    //     matchYN.innerHTML = 'Si matchean perro de los naranjos'
+    // }else{
+    //     matchYN.innerHTML = 'No matchean perro de los naranjos'
+    // }
 })
 
 startAgain.addEventListener('click', ()=>{
-    sectionResult.style.display = 'none'
+    btnResult.style.display = 'none'
     home.style.display= 'flex'
 })
