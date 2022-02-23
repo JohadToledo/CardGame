@@ -31,8 +31,13 @@ let divResults = document.getElementById('div-results')
 let matchYN = document.getElementById('matchYN')
 let btnResult = document.getElementById('btnResult')
 let previousGameList = document.getElementById('previous-game-list')
+let previousGameUl = document.getElementById('previous-game-ul')
 let cardPlayer = document.getElementById('card-player')
 let sectionResults = document.getElementById('sectionResults')
+let resultPlayers = document.getElementById('resultPlayers')
+let resultMatch = document.getElementById('resultMatch')
+let saveBtn = document.getElementById('saveBtn')
+let backToHome = document.getElementById('backToHome')
 let match = null
 
 
@@ -66,12 +71,12 @@ pic3.setAttribute('src', completedGame[2].img)
 pic4.setAttribute('src', completedGame[3].img)
 pic5.setAttribute('src', completedGame[4].img)
 pic6.setAttribute('src', completedGame[5].img)
-text1.innerHTML = `Card 1/3 of ${playerZ.value}`
-text2.innerHTML = `Card 2/3 of ${playerZ.value}`
-text3.innerHTML = `Card 3/3 of ${playerZ.value}`
-text4.innerHTML = `Card 1/3 of ${playerX.value}`
-text5.innerHTML = `Card 2/3 of ${playerX.value}`
-text6.innerHTML = `Card 3/3 of ${playerX.value}`
+text1.innerHTML = `Card 1/3 of ${playerX.value}`
+text2.innerHTML = `Card 2/3 of ${playerX.value}`
+text3.innerHTML = `Card 3/3 of ${playerX.value}`
+text4.innerHTML = `Card 1/3 of ${playerZ.value}`
+text5.innerHTML = `Card 2/3 of ${playerZ.value}`
+text6.innerHTML = `Card 3/3 of ${playerZ.value}`
 desc1.innerHTML = completedGame[0].description
 desc2.innerHTML = completedGame[1].description
 desc3.innerHTML = completedGame[2].description
@@ -112,13 +117,31 @@ let back =()=>{
     btnResult.style.display= 'flex'
 }
 
+let setResult =()=>{
+    let itemResult = `<div class="card-detail">
+                        <h5 class='h5-title'>${playerX.value}</h5>
+                        <div >
+                            <img src="${results[0].img}" class="icon-img" >
+                            <img src="${results[1].img}" class="icon-img" >
+                            <img src="${results[2].img}" class="icon-img" >
+                        </div>
+                       </div>
+                       <div class="card-detail">
+                        <h5 class='h5-title'>${playerZ.value}</h5>
+                        <div>
+                            <img src="${results[0].img}" class="icon-img" >
+                            <img src="${results[1].img}" class="icon-img" >
+                            <img src="${results[2].img}" class="icon-img" >
+                        </div>
+                       </div>
+                        `;
+    resultPlayers.innerHTML = itemResult
+}
 
 showResults.addEventListener('click', ()=>{
-    console.log('home')
     btnResult.style.display= 'none'
     sectionResults.style.display= 'flex'
-
-
+    setResult()
     // if(match){
     //     matchYN.innerHTML = 'Si matchean perro de los naranjos'
     // }else{
@@ -129,4 +152,20 @@ showResults.addEventListener('click', ()=>{
 startAgain.addEventListener('click', ()=>{
     btnResult.style.display = 'none'
     home.style.display= 'flex'
+})
+
+backToHome.addEventListener('click', ()=>{
+    btnResult.style.display = 'none'
+    home.style.display= 'flex'
+})
+
+let saveResults = ()=>{
+    previousGameList.style.display = 'block';
+    previousGameUl.innerHTML += 'PlaterZ and PlayerX    >Go>>'
+}
+
+saveBtn.addEventListener('click', ()=>{
+    btnResult.style.display = 'none'
+    home.style.display= 'flex'
+    previousGameUl.innerHTML += saveResults()
 })
