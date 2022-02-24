@@ -54,10 +54,9 @@ section{
 }
 
 .home{
-    background: url(./img/dog-splash.png) no-repeat center;
+    /* background: url(./img/dog-splash.png) no-repeat center; */
     background-size: cover;
     position: relative;
-    padding-top: 30px;
     flex-direction: column;
     justify-content: flex-start;
 
@@ -143,7 +142,7 @@ width: 50%;
     list-style: none;
 }
 
-.sectionResults{
+.results{
     display: none;
 }
 
