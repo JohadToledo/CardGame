@@ -162,10 +162,12 @@ backToHome.addEventListener('click', ()=>{
 
 let saveResults = ()=>{
     previousGameList.style.display = 'block';
-    let itemLi = document.createElement('li');
-    let itemTxt = document.createTextNode(`${previousGames[0][6].playerX} and ${previousGames[0][6].playerZ}`)
-    itemLi.appendChild(itemTxt)
-    previousGameUl.appendChild(itemLi)
+    // let itemLi = document.createElement('li');
+    // let itemTxt = document.createTextNode(`${previousGames[0][6].playerX} and ${previousGames[0][6].playerZ} <button onclick={playPrevious(0)}>ver</button>`)
+    // itemLi.appendChild(itemTxt)
+    // previousGameUl.appendChild(itemLi)
+    let item = `${previousGames[0][6].playerX} and ${previousGames[0][6].playerZ} <button onclick={playPrevious(0)}>ver</button>`
+    previousGameUl.innerHTML += item
 }
 
 saveBtn.addEventListener('click', ()=>{
