@@ -177,74 +177,74 @@ saveBtn.addEventListener('click', ()=>{
 
 
 
- new
-playerForm.addEventListener("submit", (e)=>{
-    e.preventDefault();
-    playerX = e.target.playerX.value 
-    playerZ = e.target.playerZ.value 
+ // new
+// playerForm.addEventListener("submit", (e)=>{
+//     e.preventDefault();
+//     playerX = e.target.playerX.value 
+//     playerZ = e.target.playerZ.value 
     
-    showPage(animation)
-    createGame();
-    playerForm.reset()
-    })
+//     showPage(animation)
+//     createGame();
+//     playerForm.reset()
+//     })
     
-    let showPage = (page, pos)=>{
-        section.forEach((section)=>{
-            section.style.display = 'none'
+//     let showPage = (page, pos)=>{
+//         section.forEach((section)=>{
+//             section.style.display = 'none'
     
-            page.style.display = 'flex'
+//             page.style.display = 'flex'
     
-            if(page === 'animationa'){
-                setTimeout(()=>{
-                    showCards()
-                }, 2500)
-            }
-            if(page.id === 'results'){
-                showResult()
-            }
-        })
-    }
+//             if(page === 'animationa'){
+//                 setTimeout(()=>{
+//                     showCards()
+//                 }, 2500)
+//             }
+//             if(page.id === 'results'){
+//                 showResult()
+//             }
+//         })
+//     }
     
-    const createGame =() => {
-        let newCards = []
-        let template = ''
-        let active = ''
-        let j = 0
-        let sum = 0
-        let random = ''
-        let save = false 
+//     const createGame =() => {
+//         let newCards = []
+//         let template = ''
+//         let active = ''
+//         let j = 0
+//         let sum = 0
+//         let random = ''
+//         let save = false 
     
-        while(newCards < 6){
-            random = Math.round(Math.random() * data.length)
-            if(newCards.indexOf(data[random]) == -1){
-                newCards.push(data[random])
-            }
-        }
-    
-    
-        sthCards = newCards
-    
-        newCards.forEach((card, index) =>{
-            if(index === 0) active = 'active'
-            else active = ''
+//         while(newCards < 6){
+//             random = Math.round(Math.random() * data.length)
+//             if(newCards.indexOf(data[random]) == -1){
+//                 newCards.push(data[random])
+//             }
+//         }
     
     
-        template +=  `
-          <div class="carousel-item ${active}" id="card${index+1}" data-number="${index+1}">
-          <img src="${card.img}" class="d-block" alt="${card.name}">
-          <h5>${card.name}</h5>
-              <p> ${card.description}</p>
-          </div>`
+//         sthCards = newCards
     
-        sum += card.match
-        })
+//         newCards.forEach((card, index) =>{
+//             if(index === 0) active = 'active'
+//             else active = ''
     
-        if(sum % 2 === 0){
-            match = true
-        }else match = false
     
-        carouselInner.innerHTML = template
+//         template +=  `
+//           <div class="carousel-item ${active}" id="card${index+1}" data-number="${index+1}">
+//           <img src="${card.img}" class="d-block" alt="${card.name}">
+//           <h5>${card.name}</h5>
+//               <p> ${card.description}</p>
+//           </div>`
+    
+//         sum += card.match
+//         })
+    
+//         if(sum % 2 === 0){
+//             match = true
+//         }else match = false
+    
+//         carouselInner.innerHTML = template
         
-        cardsPlayer.innerHTML  = `Card 1/3 of ${playerX}`
+//         cardsPlayer.innerHTML  = `Card 1/3 of ${playerX}`
     
-    } 
+//     } 
