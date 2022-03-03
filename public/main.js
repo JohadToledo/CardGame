@@ -8,6 +8,11 @@ let animation = document.querySelector('.animation')
 let btnResult = document.querySelector('.btnResult')
 let results = document.querySelector('.results')
 
+
+let carouselInner = document.querySelector('.carousel-inner')
+
+
+
 let allGames = []
 
 const showPage = (page) =>{
@@ -26,14 +31,30 @@ const showPage = (page) =>{
 const startGame = () =>{
     let currentGame = []
     let random = 0
+    let slide = ''
+    let active = ''
     while (currentGame.length < 6){
         random = Math.floor(Math.random() * data.length)
             if(currentGame.indexOf(data[random]) == -1){
                 currentGame.push(data[random])
         }
     }
-    console.log(currentGame)
+    
+    currentGame.forEach((card, index)=>{
+        if(index == 0)active = 'active'
+        else active = ''
+         
+        slide += `<div class="carousel-item ${active}">
+                    <img src=${card.img} class="d-block" alt="${card.name}" >
+                    <h5>${card.name}</h5>
+                    <p> ${card.description}</p>
+                </div>`
+    })
+    
+    carouselInner.innerHTML = slide
+
 }
+
 
 
 form.addEventListener('submit', (e) => {
