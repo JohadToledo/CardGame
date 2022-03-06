@@ -95,7 +95,7 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div>
-        <!-- <button class="btn btn-close" onclick='continue()'>Continue</button> -->
+        <button id="btnContinue" class="btn btn-dark">Continue</button>
         </div>
       </section>
     <!-- here go the animation -->
@@ -120,17 +120,20 @@
     <section class="section results sectionResults" id="sectionResults">
       <div class="content">
         <div class="result">
-          <div class="result-top">
-            <h3>Results</h3>
+            <h2>Results</h2>
+          <div class="resultContent">
+            <div class="listX">
+              <h3></h3>
+              <ul class="cardsPlayers"></ul>
+            </div>
+            <div class="listZ">
+              <h3></h3>
+              <ul class="cardsPlayers"></ul>
+            </div>
           </div>
-            <div class="result-bottom">
-              <div id="resultPlayers"></div>
-              <div id="resultMatch">Match</div>
-              <div>
+          <div id="resultMatch">Match</div>
                 <button id="saveBtn">Save</button>
                 <button id="backToHome">Home</button>
-              </div>
-            </div>
         </div>
       </div>
     </section>

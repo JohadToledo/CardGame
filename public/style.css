@@ -1,209 +1,205 @@
 * {
-    margin: 0;
-    padding: 0;
-    outline: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
 }
-body{
-    font-family: 'Architects Daughter', cursive;
+body {
+  font-family: "Architects Daughter", cursive;
 }
-header{
-    /* width:25vw; */
-    height: 60px;
-    /* position: fixed; */
-    z-index: 100;
-    text-align: center;
-    width: 100%;
-    background-color: rgb(247, 124, 10);
-    font-size: 2rem;
+header {
+  /* width:25vw; */
+  height: 60px;
+  /* position: fixed; */
+  z-index: 100;
+  text-align: center;
+  width: 100%;
+  background-color: rgb(247, 124, 10);
+  font-size: 2rem;
 }
-.form-label{
-    background-color: rgb(247, 124, 10);
-    color: #fff;
-    padding: 4px 13px;
-    border-radius: 4px;
-}
-
-section{
-    /* width: 25vw; */
-    background: #444;
-    height: calc(100vh - 60px);
+.form-label {
+  background-color: rgb(247, 124, 10);
+  color: #fff;
+  padding: 4px 13px;
+  border-radius: 4px;
 }
 
-.space-25{
-    margin-top:25px;
-    margin-bottom:25px;
+section {
+  /* width: 25vw; */
+  background: #444;
+  height: calc(100vh - 60px);
 }
 
-.center{
-    text-align: center;
+.space-25 {
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
-.content{
-    display: flex;
-    width: 100%;
-    height: calc(100vh - 60px);
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 30px;
+.center {
+  text-align: center;
 }
 
-.player1{
-    margin-top: 50px;
+.content {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 60px);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px;
 }
 
-.home{
-    /* background: url(./img/dog-splash.png) no-repeat center; */
-    background-size: cover;
-    position: relative;
-    flex-direction: column;
-    justify-content: flex-start;
-
+.player1 {
+  margin-top: 50px;
 }
 
-.carousel-indicators li{
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin: 1px;
-    text-indent: -999px;
-    cursor: pointer;
-    background-color: #000/9;
-    background-color: rgba(0,0,0,0);
-    border: 1px solid #fff;
-    border-radius: 10px;
+.home {
+  /* background: url(./img/dog-splash.png) no-repeat center; */
+  background-size: cover;
+  position: relative;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-.carousel-indicators .active{
-    width: 12px;
-    height: 12px;
-    margin: 0;
-    background-color: #fff;
+.carousel-indicators li {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 1px;
+  text-indent: -999px;
+  cursor: pointer;
+  background-color: #000/9;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #fff;
+  border-radius: 10px;
 }
 
-.carousel img{
-    width: 175px;
-    height: 40vh;
-    display: inline !important;
-    border-radius: 9px;
+.carousel-indicators .active {
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  background-color: #fff;
 }
 
-.animation img{
-width: 50%;
+.carousel img {
+  width: 175px;
+  height: 40vh;
+  display: inline !important;
+  border-radius: 9px;
 }
 
-#animation{
-    display: none;
+.animation img {
+  width: 50%;
 }
 
-#carousel{
-    display: none;
+#animation {
+  display: none;
+}
+
+#carousel {
+  display: none;
 }
 
 .carousel-indicators [data-bs-target] {
-    width: 11px;
-    height: 11px;
-    border-radius: 50%;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
 }
 
 .btn-close {
-    border: none;
-    position: fixed;
-    width: 55px;
-    height: 55px;
-    line-height: 55px;
-    top: 10vh;
-    right: 3vw;
-    text-decoration: none;
-    text-align: center;
-    z-index: 100;
-    color: #FF97BB;
-    background: none;
-    opacity: 1;
+  border: none;
+  position: fixed;
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  top: 10vh;
+  right: 3vw;
+  text-decoration: none;
+  text-align: center;
+  z-index: 100;
+  color: #ff97bb;
+  background: none;
+  opacity: 1;
 }
 
 .btn-close svg {
-    width: 50px;
-    height: 50px;
-    color: #FF97BB;
+  width: 50px;
+  height: 50px;
+  color: #ff97bb;
 }
 
-.btnResult{
-    display: none;
+.btnResult {
+  display: none;
 }
 
-.previous-game-list{
-    display: none;
-    margin-top: 30px;
+.previous-game-list {
+  display: none;
+  margin-top: 30px;
 }
 
-.previous-game{
-    list-style: none;
+.previous-game {
+  list-style: none;
 }
 
-.results{
-    display: none;
+.results {
+  display: none;
 }
 
-.result{
-    border: 1px solid #444;
-    border-radius: 4px;
-    background: rgb(247, 124, 10);
-    height: 70vh;
-    width: 260px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.result {
+  border: 1px solid #444;
+  border-radius: 4px;
+  background: rgb(247, 124, 10);
+  height: 70vh;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-
-.btnCloseResult{
-    border: none;
-    /* position: fixed; 
-    width: 55px;
-    height: 55px;
-    line-height: 55px;
-    top: 32vh;
-    right: 25vw;*/
-    text-decoration: none;
-    text-align: center;
-    z-index: 100;
-    color: #444;
-    background: none;
-    opacity: 1;
+.result-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
+  width: 80%;
 }
 
-.result-top{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-items: flex-start;
-    width: 80%;
-
+.result-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 80%;
+  width: 80%;
 }
 
-.result-bottom{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    height: 80%;
-    width: 80%;
+.card-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.card-detail{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.card-detail div {
+  display: flex;
 }
 
-.card-detail div{
-    display: flex;
+.icon-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
 }
 
-.icon-img{
-    width: 50px;
-    height: 50px;
-    border-radius:50px;
+.cardsPlayers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cardsPlayers img {
+    width: 77px;
+    padding: 5px;
+    height: 100px;
 }
