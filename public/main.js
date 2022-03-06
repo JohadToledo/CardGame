@@ -10,6 +10,8 @@ let results = document.querySelector('.results')
 
 
 let carouselInner = document.querySelector('.carousel-inner')
+let carouselGame = document.querySelector('#carouselGame')
+let carouselPlayerName = document.querySelector('#carouselPlayerName')
 
 
 
@@ -44,18 +46,24 @@ const startGame = () =>{
         if(index == 0)active = 'active'
         else active = ''
          
-        slide += `<div class="carousel-item ${active}">
+        slide += `<div class="carousel-item ${active}" data-index='${index+1}'>
                     <img src=${card.img} class="d-block" alt="${card.name}" >
                     <h5>${card.name}</h5>
                     <p> ${card.description}</p>
                 </div>`
     })
-    
+    carouselPlayerName.innerHTML = `Card 1/3 of ${playerX}`
     carouselInner.innerHTML = slide
-
 }
 
-
+carouselGame.addEventListener('slide.bs.carousel', function (e) {
+    let cardNumber = e.relatedTarget.getAttribute('data-index')
+    if(cardNumber <= 3){
+        carouselPlayerName.innerHTML = `Card ${cardNumber}/3 of ${playerX}`
+    }if(cardNumber > 3 && cardNumber <= 6){
+        carouselPlayerName.innerHTML = `Card ${cardNumber - 3}/3 of ${playerZ}`
+    }
+  })
 
 form.addEventListener('submit', (e) => {
 e.preventDefault()
@@ -67,74 +75,3 @@ startGame()
 form.reset()
 })
 
-// new
-// playerForm.addEventListener("submit", (e)=>{
-//     e.preventDefault();
-//     playerX = e.target.playerX.value 
-//     playerZ = e.target.playerZ.value 
-    
-//     showPage(animation)
-//     createGame();
-//     playerForm.reset()
-//     })
-    
-//     let showPage = (page, pos)=>{
-//         section.forEach((section)=>{
-//             section.style.display = 'none'
-    
-//             page.style.display = 'flex'
-    
-//             if(page === 'animationa'){
-//                 setTimeout(()=>{
-//                     showCards()
-//                 }, 2500)
-//             }
-//             if(page.id === 'results'){
-//                 showResult()
-//             }
-//         })
-//     }
-    
-//     const createGame =() => {
-//         let newCards = []
-//         let template = ''
-//         let active = ''
-//         let j = 0
-//         let sum = 0
-//         let random = ''
-//         let save = false 
-    
-//         while(newCards < 6){
-//             random = Math.round(Math.random() * data.length)
-//             if(newCards.indexOf(data[random]) == -1){
-//                 newCards.push(data[random])
-//             }
-//         }
-    
-    
-//         sthCards = newCards
-    
-//         newCards.forEach((card, index) =>{
-//             if(index === 0) active = 'active'
-//             else active = ''
-    
-    
-//         template +=  `
-//           <div class="carousel-item ${active}" id="card${index+1}" data-number="${index+1}">
-//           <img src="${card.img}" class="d-block" alt="${card.name}">
-//           <h5>${card.name}</h5>
-//               <p> ${card.description}</p>
-//           </div>`
-    
-//         sum += card.match
-//         })
-    
-//         if(sum % 2 === 0){
-//             match = true
-//         }else match = false
-    
-//         carouselInner.innerHTML = template
-        
-//         cardsPlayer.innerHTML  = `Card 1/3 of ${playerX}`
-    
-//     } 
