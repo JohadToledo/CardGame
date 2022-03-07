@@ -20,6 +20,7 @@ let listXPlayerCards = document.querySelector('.listX ul')
 let listZ = document.querySelector('.listZ')
 let listZPlayerName = document.querySelector('.listZ h3')
 let listZPlayerCards = document.querySelector('.listZ ul')
+let matchResult = document.querySelector('.matchResult')
 
 let allGames = []
 let currentGame = []
@@ -82,9 +83,12 @@ carouselGame.addEventListener('slide.bs.carousel', function (e) {
         sum = sum + card.match
     })
     if(sum % 2 == 0){
-        console.log('match YES')
-    }else console.log('match NO')
-    
+    //     console.log('match YES')
+        matchResult.innerHTML = '💗'
+    }else {
+        // console.log('match NO')
+        matchResult.innerHTML = '💔'
+    }
     console.log(sum)
     listXPlayerName.innerHTML = `${playerX}`
     listZPlayerName.innerHTML = `${playerZ}`
