@@ -45,6 +45,7 @@ const showPage = (page) => {
 };
 
 const startGame = () => {
+  currentGame = []
   let random = 0;
   let slide = "";
   let active = "";
@@ -81,11 +82,13 @@ carouselGame.addEventListener("slide.bs.carousel", function (e) {
 
 const showResults = (position) => {
   let sum = 0;
+  
+  listXPlayerCards.innerHTML = ``
+  listZPlayerCards.innerHTML = ``
 
   if(position){
-      currentGame = allGames[position];
+      currentGame = allGames[position]
   }
-
   currentGame.forEach((card, index) => {
     if (index < 3) {
       listXPlayerCards.innerHTML += `<li><img class='' src='${card.img}'/></li>`;
@@ -106,34 +109,32 @@ const showResults = (position) => {
   console.log(sum);
   listXPlayerName.innerHTML = `${playerX}`;
   listZPlayerName.innerHTML = `${playerZ}`;
-  resetScreen()
+  
 };
 
 const resetScreen = () => {
-    listXPlayerName = ``
-    listZPlayerName = ``
-    listXPlayerCards = ``
-    listZPlayerCards = ``
-    currentGame = []
+    listXPlayerCards.innerHTML = ``
+    listZPlayerCards.innerHTML = ``
 }
 
 previousGame.addEventListener("click", (e)=>{
     if (e.target.getAttribute('data-position')){
-        pos = e.target.getAttribute('data-position');
+        let pos = e.target.getAttribute('data-position');
         playerX = e.target.getAttribute('data-pX');
         playerZ = e.target.getAttribute('data-pZ');
         matchBool = e.target.getAttribute('data-match');
 
-        showResults(pos)
+        showResults(e.target.getAttribute('data-position'))
         showPage(results)
     }
 })
 
 const saveGame = (playerX, playerZ, matchBool) => {
- resetScreen()
+
  allGames.push(currentGame);
- previousGame.innerHTML += `<li>${playerX} & ${playerZ} - ${matchBool} 
- <button data-pX='${playerX}'   ='${playerZ}' data-match='${matchBool}' data-position='${position++}'>See game</button></li>`
+ previousGame.innerHTML += `<li>${playerX} & ${playerZ} - '${matchBool}' 
+ <button data-pX="${playerX}" data-pZ="${playerZ}" data-match="${matchBool}" data-position="${position++}">See game</button></li>`
+ currentGame = []
 }
 
 btnContinue.addEventListener("click", (e) => {
