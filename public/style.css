@@ -133,7 +133,6 @@ section {
 }
 
 .previous-game-list {
-  display: none;
   margin-top: 30px;
 }
 
@@ -202,4 +201,11 @@ section {
   width: 77px;
   padding: 5px;
   height: 100px;
+}
+
+.result-button{
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+
 }
