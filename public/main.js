@@ -29,7 +29,7 @@ let backToHome = document.getElementById("backToHome");
 let allGames = [];
 let currentGame = [];
 let matchBool = false;
-let position = 0
+let position = 0;
 
 const showPage = (page) => {
   section.forEach((page) => {
@@ -40,12 +40,12 @@ const showPage = (page) => {
   if (page === animation) {
     setTimeout(() => {
       showPage(carousel);
-    }, 2500);
+    }, 500);
   }
 };
 
 const startGame = () => {
-  currentGame = []
+  currentGame = [];
   let random = 0;
   let slide = "";
   let active = "";
@@ -55,7 +55,7 @@ const startGame = () => {
       currentGame.push(data[random]);
     }
   }
-  
+
   currentGame.forEach((card, index) => {
     if (index == 0) active = "active";
     else active = "";
@@ -82,12 +82,12 @@ carouselGame.addEventListener("slide.bs.carousel", function (e) {
 
 const showResults = (position) => {
   let sum = 0;
-  
-  listXPlayerCards.innerHTML = ``
-  listZPlayerCards.innerHTML = ``
 
-  if(position){
-      currentGame = allGames[position]
+  listXPlayerCards.innerHTML = ``;
+  listZPlayerCards.innerHTML = ``;
+
+  if (position) {
+    currentGame = allGames[position];
   }
   currentGame.forEach((card, index) => {
     if (index < 3) {
@@ -109,33 +109,35 @@ const showResults = (position) => {
   console.log(sum);
   listXPlayerName.innerHTML = `${playerX}`;
   listZPlayerName.innerHTML = `${playerZ}`;
-  
 };
 
 const resetScreen = () => {
-    listXPlayerCards.innerHTML = ``
-    listZPlayerCards.innerHTML = ``
-}
+  listXPlayerCards.innerHTML = ``;
+  listZPlayerCards.innerHTML = ``;
+};
 
-previousGame.addEventListener("click", (e)=>{
-    if (e.target.getAttribute('data-position')){
-        let pos = e.target.getAttribute('data-position');
-        playerX = e.target.getAttribute('data-pX');
-        playerZ = e.target.getAttribute('data-pZ');
-        matchBool = e.target.getAttribute('data-match');
+previousGame.addEventListener("click", (e) => {
+  if (e.target.getAttribute("data-position")) {
+    let pos = e.target.getAttribute("data-position");
+    playerX = e.target.getAttribute("data-pX");
+    playerZ = e.target.getAttribute("data-pZ");
+    matchBool = e.target.getAttribute("data-match");
 
-        showResults(e.target.getAttribute('data-position'))
-        showPage(results)
-    }
-})
+    showResults(e.target.getAttribute("data-position"));
+    showPage(results);
+  }
+});
 
 const saveGame = (playerX, playerZ, matchBool) => {
-
- allGames.push(currentGame);
- previousGame.innerHTML += `<li>${playerX} & ${playerZ} - '${matchBool}' 
- <button data-pX="${playerX}" data-pZ="${playerZ}" data-match="${matchBool}" data-position="${position++}">See game</button></li>`
- currentGame = []
-}
+  allGames.push(currentGame);
+  console.log(currentGame);
+  console.log(allGames);
+  console.log(matchBool[0]);
+  console.log(matchResult);
+  previousGame.innerHTML += `<li>${playerX} & ${playerZ} - '${matchBool}' 
+ <button data-pX="${playerX}" data-pZ="${playerZ}" data-match="${matchBool}" data-position="${position++}">See game</button></li>`;
+  currentGame = [];
+};
 
 btnContinue.addEventListener("click", (e) => {
   showResults();
@@ -144,12 +146,13 @@ btnContinue.addEventListener("click", (e) => {
 
 saveBtn.addEventListener("click", (e) => {
   saveGame(playerX, playerZ, matchResult);
-  showPage(home)
-})
+  console.log(currentGame);
+  showPage(home);
+});
 
 backToHome.addEventListener("click", (e) => {
-    showPage(home)
-})
+  showPage(home);
+});
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
